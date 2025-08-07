@@ -1,0 +1,23 @@
+# Render Blueprint for Modern Voting System
+services:
+  - type: web
+    name: voting-system-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: web
+          name: voting-system-backend
+          property: port
+    
+  - type: web
+    name: voting-system-frontend
+    env: static
+    plan: free
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build

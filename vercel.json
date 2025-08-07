@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "voting-system-frontend",
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/build/index.html"
+    }
+  ],
+  "buildCommand": "cd client && npm install && npm run build"
+}

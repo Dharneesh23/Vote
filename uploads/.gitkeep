@@ -1,0 +1,5 @@
+# Uploads Directory
+
+This directory stores uploaded candidate photos.
+
+The .gitkeep file ensures this directory structure is preserved in version control while ignoring the actual uploaded files for security and storage reasons.

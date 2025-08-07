@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗳️ Online Voting System</h1>
+        </header>
+        
+        <div class="login-container" id="loginContainer">
+            <div class="login-form">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div class="admin-dashboard hidden" id="adminDashboard">
+            <div class="admin-header">
+                <h2>Admin Dashboard</h2>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('candidates')">Manage Candidates</button>
+                <button class="tab-btn" onclick="showTab('results')">Vote Results</button>
+            </div>
+
+            <!-- Candidates Management -->
+            <div class="tab-content active" id="candidates">
+                <div class="add-candidate">
+                    <h3>Add New Candidate</h3>
+                    <form id="candidateForm">
+                        <div class="input-group">
+                            <label for="candidateName">Name:</label>
+                            <input type="text" id="candidateName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="candidatePosition">Position:</label>
+                            <input type="text" id="candidatePosition" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="candidatePhoto">Upload Photo:</label>
+                            <input type="file" id="candidatePhoto" accept="image/*" required>
+                            <small>Choose image from your computer (JPG, PNG, GIF)</small>
+                        </div>
+                        <button type="submit">Add Candidate</button>
+                    </form>
+                </div>
+                
+                <div class="candidates-list">
+                    <h3>Current Candidates</h3>
+                    <div id="candidatesList"></div>
+                </div>
+            </div>
+
+            <!-- Results Tab -->
+            <div class="tab-content" id="results">
+                <h3>Voting Results</h3>
+                <div id="resultsList"></div>
+            </div>
+        </div>
+
+        <!-- User Dashboard -->
+        <div class="user-dashboard hidden" id="userDashboard">
+            <div class="user-header">
+                <h2>Voting Portal</h2>
+                <div class="user-info">
+                    <span id="userInfo"></span>
+                    <button id="userLogoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+            
+            <div class="voting-section">
+                <h3>Select Your Candidate</h3>
+                <div id="votingCandidates"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

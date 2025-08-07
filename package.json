@@ -1,0 +1,39 @@
+{
+  "name": "modern-voting-system",
+  "version": "1.0.0",
+  "description": "Modern Online Voting System with React Frontend and Node.js Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "build:prod": "cd client && npm run build && npm run build:copy",
+    "build:copy": "cp -r client/build/* public/ 2>/dev/null || xcopy client\\build public\\ /E /Y 2>nul || echo 'Static files ready'",
+    "install-deps": "npm install && cd client && npm install",
+    "setup": "npm run install-deps && echo Setup complete! Run 'npm run dev' to start both frontend and backend",
+    "prepare-deploy": "npm run install-deps && npm run build && echo Deployment files ready!",
+    "test-prod": "NODE_ENV=production npm start"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "voting",
+    "react",
+    "nodejs",
+    "sqlite",
+    "election",
+    "modern"
+  ],
+  "author": "Modern Voting System",
+  "license": "MIT"
+}
