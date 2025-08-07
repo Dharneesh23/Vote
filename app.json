@@ -1,0 +1,15 @@
+{
+  "name": "Modern Voting System",
+  "description": "Full-stack voting system with React frontend and Node.js backend",
+  "repository": "https://github.com/Dharneesh23/Vote",
+  "keywords": ["voting", "react", "nodejs", "sqlite", "election"],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "commands": ["npm install"]
+  },
+  "start": {
+    "cmd": "npm start"
+  }
+}
